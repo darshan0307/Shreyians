@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'signin.css' %}">
+</head>
+<body>
+    <form method="POST" action="/submit/">
+    {% csrf_token %}
+
+    <label>Mobile Number *</label>
+    <input type="tel" name="mobile" placeholder="Enter Your Mobile Number" required>
+
+    <button type="submit" name="login_type" value="google">
+        Continue with Google
+    </button>
+
+    <button type="submit" name="login_type" value="new_account">
+        Create a New Account
+    </button>
+
+    <button type="submit" onclick="check()">
+        submit
+    </button>
+</form>
+<script src="./app.js"></script>
+
+</body>
+</html>
